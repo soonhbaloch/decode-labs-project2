@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Urban Brew | Project 2</title>
+    <style>
+        /* Mobile Core: Base CSS [cite: 91, 111] */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+        }
+
+        body {
+            background-color: #fdfaf5;
+            color: #3d2b1f;
+        }
+
+        /* Responsive Navigation [cite: 23] */
+        .navbar {
+            background: #2b1d12;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column; /* Mobile first stack [cite: 143] */
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            color: #d4a373;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fefae0;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: #d4a373; }
+
+        /* Hero Section - The Art of Fluidity  */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=1000');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+
+        /* Grid System [cite: 140] */
+        .menu-grid {
+            padding: 50px 20px;
+            display: flex;
+            flex-direction: column; /* One-dimensional for mobile [cite: 140] */
+            gap: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .menu-item:hover { transform: translateY(-10px); }
+
+        .item-img {
+            height: 200px;
+            background-color: #ddd;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .item-info { padding: 20px; text-align: center; }
+
+        /* Media Queries: Breakpoints are Bridges [cite: 122] */
+        @media (min-width: 768px) {
+            .navbar {
+                flex-direction: row; /* Tablet layout enhancement [cite: 141] */
+                justify-content: space-between;
+                padding: 1rem 5%;
+            }
+
+            .menu-grid {
+                flex-direction: row; /* Fluidity in action  */
+                flex-wrap: wrap;
+            }
+
+            .menu-item {
+                flex: 1 1 calc(33.33% - 30px); /* 3 columns for desktop [cite: 100] */
+            }
+
+            .hero h1 { font-size: 4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Urban Brew</div>
+        <ul class="nav-links">
+            <li><a href="#">Coffee</a></li>
+            <li><a href="#">Pastries</a></li>
+            <li><a href="#">Our Story</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Freshly Brewed Fluidity</h1>
+        <p>Perfect design transitions from desktop to mobile screens.</p>
+    </header>
+
+    <main class="menu-grid">
+        <div class="menu-item">
+            <div class="item-img" style="background-image: url('https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&q=60&w=500');"></div>
+            <div class="item-info">
+                <h3>Caramel Latte</h3>
+                <p>Sweet and creamy espresso blend.</p>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-img" style="background-image: url('https://images.unsplash.com/photo-1534706936160-d5ee67737249?auto=format&fit=crop&q=60&w=500');"></div>
+            <div class="item-info">
+                <h3>Black Coffee</h3>
+                <p>Pure, bold, and traditional brew.</p>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-img" style="background-image: url('https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&q=60&w=500');"></div>
+            <div class="item-info">
+                <h3>Cold Brew</h3>
+                <p>Refreshingly smooth iced caffeine.</p>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
